@@ -17,7 +17,8 @@ else
 	}
 }
 include_once 'koneksi.php';
-$user = mysqli_query($conn, "SELECT tb_packet.id AS id, id_user, travel, packet, date_start, date_end, `type`, price, tb_packet.description FROM tb_packet INNER JOIN tb_travel ON tb_packet.id_travel=tb_travel.id WHERE id_user='$id_login'");
+$sql = "SELECT tb_packet.id AS id, travel, packet, date_start, date_end, `type`, price, tb_packet.description FROM tb_packet INNER JOIN tb_travel ON tb_packet.id_travel=tb_travel.id WHERE id_travel='$id_login'";
+$user = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,7 +41,8 @@ $user = mysqli_query($conn, "SELECT tb_packet.id AS id, id_user, travel, packet,
                 <table id="example" class="table table-bordered" style="width: 100%">
                 <h1>Edit Travel Ditail</h1>
 
-                    <a type="button" class="btn btn-danger glyphicon glyphicon-arrow-left" href="mainMEnuTravel.php" style="margin:0 5px 10px 0"></a>
+                    <a type="button" class="btn btn-danger glyphicon glyphicon-arrow-left" href="mainMenuTravel.php" style="margin:0 5px 10px 0"></a>
+                    <a type="button" class="btn btn-primary glyphicon glyphicon-plus" href="addTravelDetail.php" style="margin: 0 0 10px 0"></a>
                     <thead>
                         <tr>
                             <th>ID</th>

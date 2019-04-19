@@ -30,9 +30,10 @@ $title="Login";
 								<option value="casier">Casir</option>
 								
 							</select>
-						</div> -->			
+						</div> -->	
+						<a type="button" href="travelAccount.php" type="button" class="btn btn-success">Create Travel Account</a>
 						<button type="submit" class="btn btn-primary">Login</button>
-					</form>
+					</form>	
 				</div>
 				<div class="col-md-4">
 					

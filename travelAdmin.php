@@ -17,7 +17,7 @@ else
 	}
 }
 include_once 'koneksi.php';
-$user = mysqli_query($conn, "SELECT id, travel, `address`, telp, email, `description`, status_travel FROM tb_travel");
+$user = mysqli_query($conn, "SELECT * FROM tb_travel");
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +48,8 @@ $user = mysqli_query($conn, "SELECT id, travel, `address`, telp, email, `descrip
                             <th>Address</th>
                             <th>Telp</th>
                             <th>Email</th>
+                            <th>Rating</th>
+                            <th>License</th>
                             <th>Description</th>
                             <th>Status Travel</th>
                             <th>Action</th>
@@ -63,6 +65,8 @@ $user = mysqli_query($conn, "SELECT id, travel, `address`, telp, email, `descrip
                             <td><?php echo $data["address"];?></td>
                             <td><?php echo $data["telp"];?></td>
                             <td><?php echo $data["email"];?></td>
+                            <td><?php echo $data["rating"];?></td>
+                            <td><?php echo $data["license"];?></td>
                             <td><?php echo $data["description"];?></td>
                             <td><?php 
                             if($data["status_travel"]==0)
